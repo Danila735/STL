@@ -1,0 +1,32 @@
+#include iostream
+#include map
+#include cstdlib
+#include iterator
+using namespace std;
+
+int main()
+{
+    mapint,string mp, it;
+    int i;
+    mp[1]=Ivanov;
+    mp[2000]=Petrov;
+    mp[2]=Sidorov;
+    mp[3]=Ivanova;
+    mp[1996]=Sidrova;
+     mp[1998]=Maslov;
+   for (i=0; i=8; i++)
+    {mp.insert(make_pair (i, int(rand() % 156)));}
+        for (mapint, stringiterator it=mp.begin(); it!=mp.end(); it++)
+cout  it-first  ' '  it-second  'n';
+mapint, stringiterator itFind=mp.find(2000);
+cout  itFind-first  ' '  itFind-second  'n';
+  mapint,int x = stdmax_element(mp.begin(), mp.end(), mp.value_comp());
+mapint,string m;
+    m.insert(make_pair (itFind-first, itFind-second));
+     for (mapint,stringiterator it=m.begin(); it!=m.end(); it++)
+cout  V map M  it-first  ' '  it-second  'n';
+mp.erase(2000);
+for (mapint, stringiterator it=mp.begin(); it!=mp.end(); it++)
+cout  it-first  ' '  it-second  'n';
+    return 0;
+}

@@ -1,0 +1,91 @@
+#include <iostream>
+
+//STL
+#include <vector>
+#include <algorithm>
+#include <iterator>
+
+using namespace std;
+
+void display(char* str)
+{
+	cout << str << endl;
+}
+
+int main()
+{
+	cout << "First container" << endl;
+
+	vector<char*> arr1;
+
+	cout << "Max size: " << arr1.max_size() << endl;						
+	cout << "Real size: " << arr1.size() << endl;							
+	cout << "Capacity: " << arr1.capacity() << endl;						
+
+	if (arr1.empty())												
+		arr1.push_back((char*)"19,8");							
+	arr1.resize(3, (char*)"25,06");									
+
+	cout << "Real size: " << arr1.size() << endl;
+	cout << "Capacity: " << arr1.capacity() << endl;
+	arr1.reserve(6);													
+	cout << "Capacity: " << arr1.capacity() << endl;
+
+
+	arr1.insert(arr1.begin()+2, 3, (char*)"61,5");			//вставка (на 2-е место вставляем 3 элем = 61,5
+	//arr1.erase (arr1.begin()+0, arr1.begin()+6);				//удаление ( со 0-го по 6-й элементы будут удалены
+
+	cout << "Ce: " << arr1.capacity() << endl;
+	
+
+
+	cout << endl;
+	for_each(arr1.begin(), arr1.end(), display);
+
+
+	cout << "Second container" << endl;
+
+	vector<char*> arr2;
+
+	cout << "Max size: " << arr2.max_size() << endl;						
+	cout << "Real size: " << arr2.size() << endl;							
+	cout << "Capacity: " << arr2.capacity() << endl;						
+
+	if (arr2.empty())												
+		arr2.push_back((char*)"5,5");							
+	arr2.resize(3, (char*)"265,6");									
+
+	cout << "Real size: " << arr2.size() << endl;
+	cout << "Capacity: " << arr2.capacity() << endl;
+	arr2.reserve(6);													
+	cout << "Capacity: " << arr2.capacity() << endl;
+
+
+	arr2.insert(arr2.begin()+2, 3, (char*)"77,9");			
+	//arr.erase (arr.begin()+2, arr.begin()+5);
+
+	cout << "Ce: " << arr1.capacity() << endl;
+
+
+
+
+	cout << endl;
+	for_each(arr2.begin(), arr2.end(), display);
+
+	int m;
+	cout << "Amount delete from first container " ;
+	cin >> m;
+	for (int i = 0; i < m; i++)
+	{
+		arr1.pop_back();
+	}
+		for (int i = 0; i < m; i++)
+	{
+		arr1.push_back(arr2.front());
+		arr2.pop_back();
+	}
+
+		for_each(arr1.begin(), arr1.end(), display);
+
+
+}
